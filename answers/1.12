@@ -1,1 +1,1 @@
-docker run -d --name my-frontend-container -p 8080:80 my-frontend-app
+docker run -d --name my-frontend-container -p 8080:80 -e WS_BACK_URL=http://my-flask-app-container:5000 my-frontend-app
