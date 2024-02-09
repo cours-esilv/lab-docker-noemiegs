@@ -2,3 +2,14 @@ version: '3'
 services:
   my-back-service:
     image: my-flask-app
+    ports:
+      - "5000:5000"
+    environment:
+      - CURRENT_ENVIRONMENT=development
+
+  my-front-service:
+    image: my-front-image
+    ports:
+      - "8080:80"
+    environment:
+      - WS_BACK_URL=http://my-back-service:5000
